@@ -1,0 +1,110 @@
+{
+    "swagger":"2.0",
+    "schemes":["http"],
+    "host": "localhost:9000",
+    "basePath":"/",
+    "consumes": [],
+    "produces": [
+        "application/json",
+        "text/json"
+    ],
+    "paths":{
+        "/api/Fibonacci":{
+            "parameters": [
+              {
+                "name": "n",
+                "in": "query",
+                "required": true,
+                "description": "The index (n) of the fibonacci sequence",
+                "type": "integer",
+                "format":"int64"
+              }
+            ],
+            "get":{
+                "tags":[
+                    "Fibonacci"
+                ],
+                "summary": "Returns the nth number in the fibonacci sequence.",
+                "responses":{
+                    "200":{
+                        "description":"OK"
+                    }
+                }
+            }
+        },
+        "/api/Reverse":{
+            "parameters": [
+                {
+                  "name": "sentence",
+                  "in": "query",
+                  "required": true,
+                  "description": "A sentence",
+                  "type": "string"
+                }
+              ],
+            "get":{
+                "tags":[
+                    "Reverse"
+                ],
+                "summary": "Reverses the letters of each word in a sentence.",
+                "responses":{
+                    "200":{
+                        "description":"OK"
+                    }
+                }
+            }
+        },
+        "/api/Token":{
+            "get":{
+                "tags":[
+                    "Token"
+                ],
+                "summary": "your token",
+                "responses":{
+                    "200":{
+                        "description":"OK"
+                    }
+                }
+            }
+        },
+        "/api/TriangleType":{
+            "parameters": [
+                {
+                  "name": "a",
+                  "in": "query",
+                  "required": true,
+                  "description": "The length of side a",
+                  "type": "integer",
+                  "format":"int32"
+                },
+                {
+                    "name": "b",
+                    "in": "query",
+                    "required": true,
+                    "description": "The length of side b",
+                    "type": "integer",
+                    "format":"int32"
+                  },
+                  {
+                    "name": "c",
+                    "in": "query",
+                    "required": true,
+                    "description": "The length of side c",
+                    "type": "integer",
+                    "format":"int32"
+                  }
+              ],
+            "get":{
+                "tags":[
+                    "TriangleType"
+                ],
+                "summary": "Returns the type of triange given the lengths of its sides",
+                "responses":{
+                    "200":{
+                        "description":"OK"
+                    }
+                }
+            }
+        }
+    }
+}
